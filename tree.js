@@ -48,13 +48,13 @@ class bst {
       if (sortedarray.length === 0) {
         return null;
       } else {
-        let mid = Math.floor(sortedarray.lenght / 2);
-        this.root = new node(sortedarray[mid]);
+        let mid = Math.floor(sortedarray.length / 2);
+         const newnode = new node(sortedarray[mid]);
 
-        this.root.left = tree(sortedarray.slice(0, mid));
-        this.root.right = tree(sortedarray.slice(mid + 1));
+        newnode.left = tree(sortedarray.slice(0, mid));
+        newnode.right = tree(sortedarray.slice(mid + 1));
 
-        return this.root;
+        return newnode;
       }
     };
 
@@ -62,14 +62,15 @@ class bst {
   }
 }
 
+
+const data = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
+let binary = new bst();
+binary.binaryarray(data);
+binary.Inorder(binary.root);
+
 /* let binarytree = new bst();
  binarytree.Insert(5);
  binarytree.Insert(8);
  binarytree.Insert(6);
  binarytree.Insert(3);
  binarytree.Inorder(binarytree.root);*/
-
-const data = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
-let binary = new bst();
-binary.binaryarray(data);
-
